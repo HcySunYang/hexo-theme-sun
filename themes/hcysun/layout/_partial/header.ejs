@@ -1,0 +1,19 @@
+<header id="header">
+  <div class="header-content clear">
+    <h1 id="logo-wrap">
+      <img src="<%- url_for('/img/hcysun.png') %>">
+      <a href="<%- url_for() %>" class="title"><%= config.title %></a>
+    </h1>
+    <nav class="main-nav">
+      <% for (var i in theme.menu){ %>
+        <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <% } %>
+    </nav>
+    <div class="search-box">
+      <img src="<%- url_for('/img/search.png') %>">
+    </div>
+  </div>
+  <div class="search-input">
+    <%- search_form({class: 'search-input-el'}) %>
+  </div>
+</header>

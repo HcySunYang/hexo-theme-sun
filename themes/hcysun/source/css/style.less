@@ -1,0 +1,121 @@
+@import './mark';
+/* hcysun  */
+@charset "utf-8";
+/* reset */
+html{
+	-webkit-text-size-adjust:none;
+	-webkit-user-select:none;
+	-webkit-touch-callout: none;
+	font-family: 'Georgia', Helvetica;
+}
+body{font-size:12px; background-color: #f8f8f8;}
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select{margin:0; padding:0; font-weight: normal;text-indent: 0;}
+a,button,input,textarea,select{ background: none; -webkit-tap-highlight-color:rgba(255,0,0,0); outline:none; -webkit-appearance:none;}
+em{font-style:normal}
+li{list-style:none}
+a{text-decoration:none;}
+img{border:none; vertical-align:top;}
+table{border-collapse:collapse;}
+textarea{ resize:none; overflow:auto;}
+/* end reset */
+
+/* 清除浮动 */
+.clear { zoom:1; }
+.clear:after { content:''; display:block; clear:both; }
+
+@headerHeight: 70px;
+@headerFontColor: #7f74d5;
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @headerHeight;
+  background-color: #fff;
+  box-shadow: 0 0 5px #ccc;
+  z-index: 1000;
+
+  .header-content {
+    background: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  #logo-wrap {
+    float: left;
+    margin-left: 70px;
+    height: 100%;
+    line-height: @headerHeight;
+    img {
+      width: 50px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
+      margin-top: 10px;
+    }
+    .title {
+      font-size: 32px;
+      color: @headerFontColor;
+      margin-left: 20px;
+    }
+  }
+
+  .main-nav {
+    float: left;
+    margin-left: 80px;
+    a {
+      float: left;
+      height: @headerHeight;
+      line-height: @headerHeight;
+      font-size: 20px;
+      margin-right: 25px;
+      color: @headerFontColor;
+    }
+  }
+
+  .search-box {
+    float: right;
+    margin-right: 60px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transform: scale(1);
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      transition: .3s;
+      transform: scale(1.2);
+    }
+  }
+
+  .search-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 0;
+    transform: translateY(-100%);
+    background-color: #fff;
+    transition: 0.5s;
+    &.active {
+      transform: translateY(@headerHeight);
+    }
+    .search-input-el {
+      margin-left: 70px;
+    }
+    .search-input-el input[type=search]{
+      display: block;
+      height: 65px;
+      border: 1px solid #fff;
+      font-size: 65px;
+    }
+    input[type=search]::-webkit-input-placeholder{
+      color:#d3d5cf;
+      font-family: 'Georgia', Helvetica;
+    }
+  }
+}

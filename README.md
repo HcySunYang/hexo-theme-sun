@@ -1,2 +1,3 @@
 # hexo-theme-sun
-hexo theme
+
+My blog theme
