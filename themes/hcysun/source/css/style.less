@@ -119,3 +119,45 @@ textarea{ resize:none; overflow:auto;}
     }
   }
 }
+
+.main {
+  padding-top: @headerHeight;
+  .post-item {
+    display: block;
+    height: 34px;
+    padding: 36px 0 36px 70px;
+  }
+  .post-date {
+    font-size: 15px;
+    color: #f26ffa;
+    float: left;
+    line-height: 34px;
+    margin-right: 28px;
+    position: relative;
+    padding-left: 20px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #f26ffa;
+      top: 50%;
+      left: 0;
+      margin-top: -5px;
+    }
+  }
+  .post-title {
+    float: left;
+    font-size: 34px;
+    color: #7a7edc;
+    line-height: 34px;
+    margin-right: 25px;
+  }
+  .post-monment {
+    float: left;
+    font-size: 15px;
+    color: #35e2eb;
+    line-height: 34px;
+  }
+}
