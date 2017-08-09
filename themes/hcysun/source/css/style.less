@@ -101,10 +101,18 @@
 // index.ejs 首页样式
 .main {
   padding-top: @headerHeight + 18px;
+  padding-bottom: @headerHeight;
+  .index-content {
+    width: 840px;
+  }
   .post-item {
     display: block;
     height: 34px;
     padding: 18px 0 18px 70px;
+    transition: 0.5s;
+    &:hover {
+      transform: translateX(15px);
+    }
   }
   .post-date {
     font-size: 15px;
@@ -133,9 +141,7 @@
     color: @headerFontColor;
     line-height: 34px;
     margin-right: 25px;
-    overflow: hidden;
     white-space:nowrap;
-    overflow:hidden;
     text-overflow:ellipsis;
   }
   .post-monment {
@@ -220,5 +226,38 @@
     font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
     word-wrap: break-word;
     font-size: 14px;
+  }
+}
+
+// code 样式
+.hljs {
+  background-color: transparent;
+  padding: 1em;
+}
+code {
+  font-size: 15px;
+  border: 1px solid #eee8d5;
+}
+
+// 页码样式
+.paginator-wrap {
+  margin-left: 70px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.page-number, .extend {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ddd;
+  margin-right: 15px;
+  color: #a9a9a9;
+  line-height: 44px;
+  text-align: center;
+  font-size: 24px;
+  &.current, &:hover {
+    color: #fff;
+    background-color: #6866d4;
+    border-color: #6866d4;
   }
 }

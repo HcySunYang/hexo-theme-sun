@@ -1,5 +1,5 @@
 <section class="main">
-  <div class="content">
+  <div class="content index-content">
     <% page.posts.each(function (post) { %>
       <a class="post-item" href="<%- url_for(post.path) %>">
         <span class="post-date"><%- date(post.date) %></span>
@@ -7,6 +7,12 @@
         <!--<span class="post-monment">( 123 )</span>-->
       </a>
     <% }) %>
+    <div class="paginator-wrap">
+      <%- paginator({
+        prev_text: '&laquo;',
+        next_text: '&raquo;'
+      }) %>
+    </div>
   </div>
   <div class="sidebar"></div>
 </section>
