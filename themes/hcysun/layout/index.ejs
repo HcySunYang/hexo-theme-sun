@@ -2,9 +2,9 @@
   <div class="content">
     <% page.posts.each(function (post) { %>
       <a class="post-item" href="<%- url_for(post.path) %>">
-        <span class="post-date">2017-08-08</span>
+        <span class="post-date"><%- date(post.date) %></span>
         <h3 class="post-title"><%- post.title %></h3>
-        <span class="post-monment">( 123 )</span>
+        <!--<span class="post-monment">( 123 )</span>-->
       </a>
     <% }) %>
   </div>
