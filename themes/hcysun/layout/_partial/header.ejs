@@ -12,8 +12,17 @@
     <div class="search-box">
       <img src="<%- url_for('/img/search.png') %>">
     </div>
+    <div class="sm-nav-bar">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
   </div>
   <div class="search-input">
     <%- search_form({class: 'search-input-el'}) %>
+  </div>
+  <div class="sm-nav">
+    <% for (var i in theme.menu){ %>
+      <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+    <% } %>
+    <%- search_form({class: 'sm-search-input-el'}) %>
   </div>
 </header>

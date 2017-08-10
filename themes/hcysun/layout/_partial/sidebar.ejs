@@ -1,0 +1,27 @@
+<div class="sidebar-content">
+  <h2>Social Links</h2>
+  <div class="sidebar-img-panel">
+    <a href="https://github.com/HcySunYang" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </a>
+    <a href="http://weibo.com/5316956357" target="_blank">
+      <i class="fa fa-weibo" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.zhihu.com/people/huo-chun-yang-77" target="_blank" class="zhihu-fa">
+      知
+    </a>
+    <a href="https://twitter.com/HcySunYang" target="_blank">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </a>
+  </div>
+  <% if (is_home() || is_archive()) { %>
+    <h2>Archives</h2>
+    <%- list_archives({
+      format: 'YYYY-MM'
+    }) %>
+  <% } %>
+  <% if (is_post()) { %>
+    <h2>目录</h2>
+    <%- toc(page.content) %>
+  <% } %>
+</div>

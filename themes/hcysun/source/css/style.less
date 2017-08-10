@@ -2,6 +2,14 @@
 @import './mixin';
 @import './var';
 @import './mark';
+@import './sidebar';
+html {
+  height: 100%;
+}
+html, body, #container, #wrap {
+  min-height: 100%;
+  position: relative;
+}
 
 // 头部样式
 #header {
@@ -96,22 +104,94 @@
       font-family: 'Georgia', Helvetica;
     }
   }
+
+  .sm-nav-bar, .sm-nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 860px) {
+  #header {
+    height: @smHeaderHeight;
+    #logo-wrap {
+      margin-left: @smHeaderHeight / 2;
+      line-height: @smHeaderHeight;
+      img {
+        width: 30px;
+        margin-top: (@smHeaderHeight - 30px) / 2;
+      }
+      .title {
+        font-size: 18px;
+      }
+    }
+
+    .main-nav, .search-input, .search-box {
+      display: none;
+    }
+
+    .sm-nav-bar {
+      height: @smHeaderHeight;
+      line-height: @smHeaderHeight;
+      display: block;
+      float: right;
+      font-size: 30px;
+      margin-right: @smHeaderHeight / 2;
+    }
+    .sm-nav {
+      display: block;
+      transform: translateY(-100%);
+      transition: 0.5s;
+      box-shadow: 0 0 5px #ccc;
+      background-color: #fff;
+      &.active {
+        transform: translateY(0);
+      }
+      a {
+        display: block;
+        height: @smHeaderHeight;
+        line-height: @smHeaderHeight;
+        font-size: 14px;
+        text-align: center;
+        color: @headerFontColor;
+        border-top: 1px dotted #eee8d3;
+        &:last-of-type {
+          border-bottom: 1px dotted #eee8d3;
+        }
+      }
+      form {
+        padding: 5px 20px;
+      }
+      .sm-search-input-el-input {
+        height: 30px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+      }
+    }
+  }
 }
 
 // index.ejs 首页样式
+#main {
+  width: @contentWidth + 70px;
+  float: left;
+}
 .main {
   padding-top: @headerHeight + 18px;
   padding-bottom: @headerHeight;
   .index-content {
-    width: 840px;
+    margin-left: 70px;
   }
   .post-item {
     display: block;
     height: 34px;
-    padding: 18px 0 18px 70px;
+    padding: 10px 0;
     transition: 0.5s;
     &:hover {
-      transform: translateX(15px);
+      transform: skew(-10deg);
+      transform-origin: 0 50%;
+      box-shadow: 0 0 5px #ccc;
     }
   }
   .post-date {
@@ -137,12 +217,13 @@
   .post-title {
     float: left;
     max-width: 680px;
-    font-size: 34px;
+    font-size: 24px;
     color: @headerFontColor;
     line-height: 34px;
     margin-right: 25px;
     white-space:nowrap;
     text-overflow:ellipsis;
+    overflow: hidden;
   }
   .post-monment {
     float: left;
@@ -154,13 +235,14 @@
 
 // post.ejs 样式
 .post-content {
-  width: 840px;
+  width: @contentWidth;
   float: left;
   margin-left: 70px;
   padding-top: 40px;
+  padding-bottom: 40px;
   .post-page-title {
     color: @headerFontColor;
-    font-size: 50px;
+    font-size: 34px;
     margin-bottom: 50px;
   }
   h2 {
@@ -221,8 +303,8 @@
   p code {
     padding: 1px 3px;
     margin: 0 3px;
-    background: #ddd;
-    border: 1px solid #ccc;
+    color: #bd10e0;
+    border-radius: 4px;
     font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
     word-wrap: break-word;
     font-size: 14px;
@@ -260,4 +342,23 @@ code {
     background-color: #6866d4;
     border-color: #6866d4;
   }
+}
+
+// 评论样式
+#disqus_thread {
+  margin-left: 70px;
+}
+
+// 页脚样式
+#footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 12px;
+  color: #fff;
+  background: #2b2b2b;
 }
