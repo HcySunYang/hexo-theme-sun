@@ -105,7 +105,7 @@ html, body, #container, #wrap {
     }
   }
 
-  .sm-nav-bar, .sm-nav {
+  .sm-nav-bar, .sm-nav, .sm-nav-toc {
     display: none;
   }
 }
@@ -171,11 +171,28 @@ html, body, #container, #wrap {
     }
   }
 }
+@media screen and (max-width: 840px) {
+  #header {
+    .sm-nav-toc {
+      display: block;
+      float: right;
+      height: @smHeaderHeight;
+      line-height: @smHeaderHeight;
+      margin-right: 20px;
+      color: @headerFontColor;
+    }
+  }
+}
 
 // index.ejs 首页样式
 #main {
-  width: @contentWidth + 70px;
+  // width: @contentWidth + 70px;
+  width: 67%;
   float: left;
+  @media screen and (max-width: 840px) {
+    width: 100%;
+    float: none;
+  }
 }
 .main {
   padding-top: @headerHeight + 18px;
@@ -184,7 +201,7 @@ html, body, #container, #wrap {
     margin-left: 70px;
   }
   .post-item {
-    display: block;
+    display: flex;
     height: 34px;
     padding: 10px 0;
     transition: 0.5s;
@@ -195,9 +212,11 @@ html, body, #container, #wrap {
     }
   }
   .post-date {
+    flex: 1;
     font-size: 15px;
+    // width: 6.51%;
     color: @pink;
-    float: left;
+    // float: left;
     line-height: 34px;
     margin-right: 28px;
     position: relative;
@@ -214,8 +233,26 @@ html, body, #container, #wrap {
       margin-top: -5px;
     }
   }
+  @media screen and (max-width: 1270px) {
+    .post-date {
+      flex: 1.5;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .post-date {
+      flex: 2;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .post-date {
+      flex: 3;
+      margin-right: 5px;
+      font-size: 12px;
+    }
+  }
   .post-title {
-    float: left;
+    // float: left;
+    flex: 8;
     max-width: 680px;
     font-size: 24px;
     color: @headerFontColor;
@@ -232,18 +269,76 @@ html, body, #container, #wrap {
     line-height: 34px;
   }
 }
+@media screen and (max-width: 860px) {
+  .main {
+    padding-bottom: 40px;
+    .index-content {
+      margin-left: 40px;
+    }
+    .post-title {
+      font-size: 20px;
+    }
+    .post-date {
+
+    }
+  }
+}
+@media screen and (max-width: 860px) {
+  .main {
+    .index-content {
+      margin-right: 40px;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .main {
+    .index-content {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .post-title {
+      font-size: 16px;
+      margin-right: 0;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .main {
+    .index-content {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .post-title {
+      font-size: 14px;
+      margin-right: 0;
+    }
+  }
+}
 
 // post.ejs 样式
 .post-content {
-  width: @contentWidth;
-  float: left;
+  // width: @contentWidth;
+  // float: left;
   margin-left: 70px;
   padding-top: 40px;
   padding-bottom: 40px;
+  @media screen and (max-width: 840px) {
+    margin: 0 40px;
+  }
+  @media screen and (max-width: 420px) {
+    padding-top: 0;
+    margin: 0 20px;
+  }
   .post-page-title {
     color: @headerFontColor;
     font-size: 34px;
     margin-bottom: 50px;
+  }
+  @media screen and (max-width: 420px) {
+    .post-page-title {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
   }
   h2 {
     font-size: 36px;
@@ -251,6 +346,11 @@ html, body, #container, #wrap {
     padding-bottom: 20px;
     border-bottom: 1px solid #eee8d3;
     margin-top: 40px;
+  }
+  @media screen and (max-width: 420px) {
+    h2 {
+      font-size: 22px;
+    }
   }
   h3 {
     position: relative;
@@ -273,11 +373,21 @@ html, body, #container, #wrap {
       margin-top: -12px;
     }
   }
+  @media screen and (max-width: 420px) {
+    h3 {
+      font-size: 20px;
+    }
+  }
   p {
     line-height: 28px;
     font-size: 18px;
     color: @contentColor;
     margin-top: 16px;
+  }
+  @media screen and (max-width: 420px) {
+    p {
+      font-size: 14px;
+    }
   }
   a {
     color: @headerFontColor;
@@ -343,10 +453,21 @@ code {
     border-color: #6866d4;
   }
 }
+@media screen and (max-width: 840px) {
+  .paginator-wrap {
+    margin-left: 0;
+    text-align: center;
+  }
+}
 
 // 评论样式
 #disqus_thread {
   margin-left: 70px;
+}
+@media screen and (max-width: 840px) {
+  #disqus_thread {
+    margin: 0 40px;
+  }
 }
 
 // 页脚样式

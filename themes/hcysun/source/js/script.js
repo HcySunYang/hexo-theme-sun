@@ -34,3 +34,12 @@ $('.sm-nav-bar').on('click', function () {
 $('.sm-nav form').on('click', function () {
   return false;
 })
+
+// 点击显示目录
+$('.sm-nav-toc').on('click', function () {
+  $('.toc-wrap').toggleClass('active')
+  return false
+})
+$(document).on('click', function () {
+  $('.toc-wrap').removeClass('active')
+})

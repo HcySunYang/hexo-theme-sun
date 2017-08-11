@@ -79,5 +79,5 @@ theme: hcysun
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/username/username.github.io.git
+  repo: https://github.com/HcySunYang/hcysunyang.github.io.git
   branch: master

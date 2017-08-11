@@ -21,7 +21,9 @@
     }) %>
   <% } %>
   <% if (is_post()) { %>
-    <h2>目录</h2>
-    <%- toc(page.content) %>
+    <h2 class="toc-h2">目录</h2>
+    <div class="toc-wrap">
+      <%- toc(page.content) %>
+    </div>
   <% } %>
 </div>
