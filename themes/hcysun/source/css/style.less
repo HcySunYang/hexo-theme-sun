@@ -383,6 +383,9 @@ html, body, #container, #wrap {
     font-size: 18px;
     color: @contentColor;
     margin-top: 16px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
   }
   @media screen and (max-width: 420px) {
     p {
@@ -398,6 +401,7 @@ html, body, #container, #wrap {
   }
   pre {
     margin: 20px 0;
+    overflow: auto;
   }
   blockquote {
     padding: 15px 20px;
