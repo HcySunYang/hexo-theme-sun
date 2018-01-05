@@ -1,17 +1,50 @@
-<section class="main">
-  <div class="content index-content">
-    <% page.posts.each(function (post) { %>
-      <a class="post-item" href="<%- url_for(post.path) %>">
-        <span class="post-date"><%- date(post.date) %></span>
-        <h3 class="post-title"><%- post.title %></h3>
-        <!--<span class="post-monment">( 123 )</span>-->
-      </a>
-    <% }) %>
-    <div class="paginator-wrap">
-      <%- paginator({
-        prev_text: '&laquo;',
-        next_text: '&raquo;'
-      }) %>
+
+<style>
+#header .sm-nav-toc {
+  display: none;
+}
+</style>
+<section id="main">
+  <section class="main">
+    <div class="main-tip">
+      最近没有更新博客，原因是在整理Vue源码分析的文章，当时机成熟之后，这些文章会一并放出，勿躁勿躁~~另外<a href="/recruitment" style="color: #ff00cc;">美团点评(美团外卖)招人啦，诚邀来聊</a>
     </div>
-  </div>
+    <div class="content index-content">
+      <% page.posts.each(function (post) { %>
+        <a class="post-item" href="<%- url_for(post.path) %>">
+          <span class="post-date"><%- date(post.date) %></span>
+          <h3 class="post-title"><%- post.title %></h3>
+          <!--<span class="post-monment">( 123 )</span>-->
+        </a>
+      <% }) %>
+      <div class="paginator-wrap">
+        <%- paginator({
+          prev_text: '&laquo;',
+          next_text: '&raquo;'
+        }) %>
+      </div>
+    </div>
+  </section>
 </section>
+<div class="sidebar-content">
+  <h2>Social Links</h2>
+  <div class="sidebar-img-panel">
+    <a href="https://github.com/HcySunYang" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </a>
+    <a href="http://weibo.com/5316956357" target="_blank">
+      <i class="fa fa-weibo" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.zhihu.com/people/huo-chun-yang-77" target="_blank" class="zhihu-fa">
+      知
+    </a>
+    <a href="https://twitter.com/HcySunYang" target="_blank">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+    </a>
+  </div>
+  <h2>Archives</h2>
+  <%- list_archives({
+    format: 'YYYY-MM'
+  }) %>
+  
+</div>

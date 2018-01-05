@@ -1,7 +1,7 @@
 <header id="header">
   <div class="header-content clear">
     <h1 id="logo-wrap">
-      <img src="<%- url_for('/img/hcysun.png') %>">
+      <img src="<%- url_for('/img/hcysun.jpg') %>">
       <a href="<%- url_for() %>" class="title"><%= config.title %></a>
     </h1>
     <nav class="main-nav">
@@ -15,9 +15,7 @@
     <div class="sm-nav-bar">
       <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
-    <% if (is_post()) { %>
-      <div class="sm-nav-toc">显示目录</div>
-    <% } %>
+    <div class="sm-nav-toc">显示目录</div>
   </div>
   <div class="search-input">
     <%- search_form({class: 'search-input-el'}) %>

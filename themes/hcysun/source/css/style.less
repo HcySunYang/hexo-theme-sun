@@ -197,6 +197,29 @@ html, body, #container, #wrap {
 .main {
   padding-top: @headerHeight + 18px;
   padding-bottom: @headerHeight;
+  .main-tip {
+    margin: 0 70px;
+    padding: 6px 20px;
+    font-size: 14px;
+    color: #00abe4;
+    border-color: #99ddf4;
+    background-color: #e5f6fc;
+  }
+  @media screen and (max-width: 860px) {
+    .main-tip {
+      margin: 0 40px;
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .main-tip {
+      margin: 0 20px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .main-tip {
+      margin: 0 10px;
+    }
+  }
   .index-content {
     margin-left: 70px;
   }

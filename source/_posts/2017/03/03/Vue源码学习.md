@@ -15,7 +15,7 @@ tags:
 
 很久之前写过一篇文章：[JavaScript实现MVVM之我就是想监测一个普通对象的变化](http://hcysun.me/2016/04/28/JavaScript%E5%AE%9E%E7%8E%B0MVVM%E4%B9%8B%E6%88%91%E5%B0%B1%E6%98%AF%E6%83%B3%E7%9B%91%E6%B5%8B%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8F%98%E5%8C%96/)，文章开头提到了我写博客的风格，还是那句话，只写努力让小白，甚至是小学生都能看明白的文章。这不免会导致对于某些同学来说这篇文章有些墨迹，所以大家根据自己的喜好，可以详细的看，也可以跳跃着看。
 
-## <span style="color: #ff6600;">一、从了解一个开源项目入手<span>
+## 一、从了解一个开源项目入手
 
 要看一个项目的源码，不要一上来就看，先去了解一下项目本身的元数据和依赖，除此之外最好也了解一下 PR 规则，Issue Reporting 规则等等。特别是“前端”开源项目，我们在看源码之前第一个想到的应该是：`package.json`文件。
 
@@ -66,7 +66,7 @@ $ npm run dev:test
 
 现在，我们只需要运行 `npm run dev` 即可监测文件变化并自动重新构建输出 dist/vue.js，然后运行 `npm run dev:test` 来测试。不过为了方便，我会在 `examples` 目录新建一个例子，然后引用 dist/vue.js 这样，我们可以直接拿这个例子一边改Vue源码一边看自己写的代码想怎么玩怎么玩。
 
-## <span style="color: #ff6600;">二、看源码的小提示</span>
+## 二、看源码的小提示
 
 在真正步入源码世界之前，我想简单说一说看源码的技巧：
 
@@ -88,7 +88,7 @@ function anonymous() {
 
 当我们知道了一个东西存在，且知道它存在的目的，那么我们就很容易抓住这条主线，这个系列的第一篇文章就是围绕大体主线展开的。了解大体之后，我们就知道了每部分内容都是做什么的，比如 codegen 是生成类似上面贴出的代码所示的函数的，那么再去看codegen下的代码时，目的性就会更强，就更容易理解。
 
-## <span style="color: #ff6600;">三、Vue 的构造函数是什么样的<span>
+## 三、Vue 的构造函数是什么样的
 
 balabala一大堆，开始来干货吧。我们要做的第一件事就是搞清楚 Vue 构造函数到底是什么样子的。
 
@@ -366,7 +366,7 @@ compileToFunctions 函数的作用，就是将模板 `template` 编译为render�
 
 > 3、`web-runtime.js` 主要是添加web平台特有的配置、组件和指令，`web-runtime-with-compiler.js` 给Vue的 `$mount` 方法添加 `compiler` 编译器，支持 `template`。
 
-## <span style="color: #ff6600;">四、一个贯穿始终的例子</span>
+## 四、一个贯穿始终的例子
 
 在了解了 `Vue` 构造函数的设计之后，接下来，我们一个贯穿始终的例子就要登场了，掌声有请：
 
@@ -752,7 +752,7 @@ initRender(vm)
 
 综上所述：按照我们的例子那样写，初始化工作只包含两个主要内容即：`initData` 和 `initRender`。
 
-## <span style="color: #ff6600;">五、通过`initData`看Vue的数据响应系统</span>
+## 五、通过 initData 看Vue的数据响应系统
 
 Vue的数据响应系统包含三个部分：`Observer`、`Dep`、`Watcher`。关于数据响应系统的内容真的已经被文章讲烂了，所以我就简单的说一下，力求大家能理解就ok，我们还是先看一下 `initData` 中的代码：
 
@@ -1035,7 +1035,7 @@ Vue 的求值代码是在 `src/core/util/lang.js` 文件中 `parsePath` 函数�
 
 这样 Vue 就建立了一套数据响应系统，之前我们说过，按照我们的例子那样写，初始化工作只包含两个主要内容即：`initData` 和 `initRender`。现在 `initData` 我们分析完了，接下来看一看 `initRender`
 
-## <span style="color: #ff6600;">六、通过`initRender`看Vue的 render(渲染) 与 re-render(重新渲染)</span>
+## 六、通过 initRender 看Vue的 render(渲染) 与 re-render(重新渲染)
 
 在 `initRender` 方法中，因为我们的例子中传递了 `el` 选项，所以下面的代码会执行：
 

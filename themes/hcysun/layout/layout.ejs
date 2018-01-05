@@ -4,8 +4,7 @@
       <div id="wrap">
          <%- partial('_partial/header', null, {cache: !config.relative_link}) %> 
         <div class="outer clear">
-          <section id="main"><%- body %></section>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+          <%- body %>
         </div>
       </div>
       <%- partial('_partial/marks', null, {cache: !config.relative_link}) %>
